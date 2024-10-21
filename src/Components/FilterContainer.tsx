@@ -60,7 +60,7 @@ const FilterContainer = () => {
         expanded={expandedPill === "personalize"}
         onClick={() => togglePill("personalize")}
         className="bg-blue-500"
-        childWrapperClassName="lg:right-0"
+        childWrapperClassName="lg:right-0 sm:min-w-max"
       >
         <PersonalizeFilter />
       </FilterPill>
