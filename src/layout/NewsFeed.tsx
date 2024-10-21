@@ -6,7 +6,7 @@ import FilterContainer from "../Components/FilterContainer";
 import { useMemo, useState, useEffect } from "react";
 import { debounce } from "../lib/utils/debounce";
 
-export default function TestScreen() {
+export default function NewsFeed() {
   const filters = useAppSelector((state) => state.filters);
   const [debouncedFilters, setDebouncedFilters] = useState(filters);
 

@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
-import TestScreen from "./layout/TestScreen";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { Provider } from "react-redux";
 import { store } from "./lib/store/store";
+import NewsFeed from "./layout/NewsFeed";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -15,7 +15,7 @@ function App() {
       <Provider store={store}>
         <Header />
         <QueryClientProvider client={queryClient}>
-          <TestScreen />
+          <NewsFeed />
         </QueryClientProvider>
         <Footer />
       </Provider>
