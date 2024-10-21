@@ -48,3 +48,23 @@ export default tseslint.config({
   },
 })
 ```
+
+## Docker Containerization
+
+This project can be containerized using Docker. Follow these steps to build and run the application in a Docker container:
+
+1. Ensure you have Docker installed on your system.
+
+2. Build the Docker image:
+   ```
+   docker build -t react-vite-app .
+   ```
+
+3. Run the container:
+   ```
+   docker run -p 3000:3000 react-vite-app
+   ```
+
+4. Access the application by opening a web browser and navigating to `http://localhost:3000`.
+
+The Dockerfile uses Node.js 20 Alpine as the base image, installs dependencies, builds the application, and serves it using the `serve` package. The container exposes port 3000 for accessing the application.

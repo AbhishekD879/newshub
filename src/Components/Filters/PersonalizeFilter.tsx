@@ -76,7 +76,7 @@ const PersonalizeFilter: React.FC = () => {
   }, [applyPreferences]);
 
   return (
-    <div className="p-4 space-y-4 min-w-max">
+    <div className="p-4 space-y-4 min-w-80">
       <h3 className="font-semibold text-lg">Customize Your News Feed</h3>
       <div>
         <h4 className="font-medium mb-2">Preferred Categories</h4>

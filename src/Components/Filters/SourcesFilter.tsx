@@ -20,7 +20,7 @@ const SourcesFilter = () => {
   };
 
   return (
-    <div className="p-4 grid lg:grid-cols-2 gap-2 min-w-max lg:w-72">
+    <div className="p-4 grid lg:grid-cols-2 gap-2 min-w-52 lg:w-72">
       {sources.map((source) => (
         <label key={source.value} className="flex items-center space-x-2">
           <input
