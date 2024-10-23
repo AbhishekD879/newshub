@@ -98,6 +98,35 @@ const filtersSlice = createSlice({
       } else {
         state.sourceSpecific.newsapi.sortBy = "popularity";
       }
+
+      // THENews
+      if (!state.sourceSpecific.thenews) {
+        state.sourceSpecific.thenews = {
+          sort: "published_on",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.thenews.sort = "published_on";
+      }
+
+      // MediaStack
+      if (!state.sourceSpecific.mediastack) {
+        state.sourceSpecific.mediastack = {
+          sort: "published_desc",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.mediastack.sort = "published_desc";
+      }
+
       state.frequentFilter = state.frequentFilter
         ? [...state.frequentFilter, "Most Popular"]
         : ["Most Popular"];
@@ -144,6 +173,35 @@ const filtersSlice = createSlice({
       } else {
         state.sourceSpecific.newsapi.sortBy = "publishedAt";
       }
+
+      // THENews
+      if (!state.sourceSpecific.thenews) {
+        state.sourceSpecific.thenews = {
+          sort: "published_on",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.thenews.sort = "published_on";
+      }
+
+      // MediaStack
+      if (!state.sourceSpecific.mediastack) {
+        state.sourceSpecific.mediastack = {
+          sort: "published_desc",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.mediastack.sort = "published_desc";
+      }
+
       state.frequentFilter = state.frequentFilter
         ? [...state.frequentFilter, "Most Recent"]
         : ["Most Recent"];
@@ -189,6 +247,34 @@ const filtersSlice = createSlice({
         };
       } else {
         state.sourceSpecific.newsapi.sortBy = "publishedAt";
+      }
+
+      // THENews
+      if (!state.sourceSpecific.thenews) {
+        state.sourceSpecific.thenews = {
+          sort: "published_on",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.thenews.sort = "published_on";
+      }
+
+      // MediaStack
+      if (!state.sourceSpecific.mediastack) {
+        state.sourceSpecific.mediastack = {
+          sort: "published_asc",
+          dateFilter: {
+            from: state.common.dateFilter.from,
+            to: state.common.dateFilter.to,
+          },
+          searchQuery: state.common.searchQuery,
+        };
+      } else {
+        state.sourceSpecific.mediastack.sort = "published_asc";
       }
 
       state.frequentFilter = state.frequentFilter

@@ -42,6 +42,8 @@ export type SourceSpecificFilters = {
   guardian?: GuardianFilters;
   nytimes?: NYTimesFilters;
   newsapi?: NewsAPIFilters;
+  thenews?: THENewsFilters; // Add THENews filters
+  mediastack?: MediaStackFilters; // Add MediaStack filters
 };
 
 export interface NewsAggregatorFilters {
@@ -64,4 +66,28 @@ export interface Article {
   url: string;
   imageUrl?: string;
   category: string;
+}
+
+export interface THENewsFilters extends CommonNewsFilters {
+  categories?: string[];
+  excludeCategories?: string[];
+  domains?: string[];
+  excludeDomains?: string[];
+  sourceIds?: string[];
+  excludeSourceIds?: string[];
+  publishedBefore?: string; // ISO date string
+  publishedAfter?: string; // ISO date string
+  publishedOn?: string; // ISO date string
+  sort?: "published_on" | "relevance_score";
+}
+
+export interface MediaStackFilters extends CommonNewsFilters {
+  date?: string; // YYYY-MM-DD format
+  sources?: string[];
+  categories?: string[];
+  countries?: string[];
+  languages?: string[];
+  keywords?: string[];
+  sort?: "published_desc" | "published_asc" | "popularity";
+  limit?: number; // Pagination limit
 }

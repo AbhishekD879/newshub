@@ -3,6 +3,8 @@ import GuardianAdapter from "./newsSources/GuardianAdapter";
 import NewsSourceAdapter from "./NewsSourceAdapter";
 import { NYTimesAdapter } from "./newsSources/NYTimesAdapter";
 import NewsApiAdapter from "./newsSources/NewsApiAdapter";
+import { THENewsAdapter } from "./newsSources/THENewsAdapter";
+import { MediaStackAdapter } from "./newsSources/MediaStackAdapter";
 
 export class NewsAggregator {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,8 +17,14 @@ export class NewsAggregator {
       if (apiKeys.nytimes) {
         this.adapters.set('nytimes', new NYTimesAdapter(apiKeys.nytimes.trim()));
       }
-      if(apiKeys.newsapi){
+      if (apiKeys.newsapi) {
         this.adapters.set('newsapi', new NewsApiAdapter(apiKeys.newsapi.trim()));
+      }
+      if (apiKeys.thenews) {
+        this.adapters.set('thenews', new THENewsAdapter(apiKeys.thenews.trim()));
+      }
+      if (apiKeys.mediastack) {
+        this.adapters.set('mediastack', new MediaStackAdapter(apiKeys.mediastack.trim()));
       }
     }
   
@@ -38,21 +46,17 @@ export class NewsAggregator {
         });
   
       const articles = await Promise.allSettled(articlePromises);
-      console.log("Articles",articles)
+      console.log("Articles", articles);
       return articles
         .filter((result): result is PromiseFulfilledResult<Article[]> => 
           result.status === 'fulfilled'
         )
         .flatMap(result => result.value)
         .sort((a, b) => {
-            if(!a.publishedAt || b.publishedAt || !( typeof a.publishedAt === "object") || !( typeof b.publishedAt === "object")){
-                return 0;
-            }else{
-                if (typeof a.publishedAt === 'string' && typeof b.publishedAt === 'string') {
-                    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-                }
+            if (!a.publishedAt || !b.publishedAt) {
                 return 0;
             }
+            return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
         });
     }
   }

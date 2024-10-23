@@ -5,6 +5,8 @@ const sources = [
   { name: "The Guardian", value: "guardian" },
   { name: "Global News", value: "newsapi" },
   { name: "New York Times", value: "nytimes" },
+  { name: "THENews", value: "thenews" },
+  { name: "MediaStack", value: "mediastack" }, // Add MediaStack source
 ];
 
 const SourcesFilter = () => {

@@ -3,12 +3,25 @@ import { useAppDispatch, useAppSelector } from "../../lib/hooks/reduxHooks";
 import { setSearchQuery } from "./../../lib/store/filtersSlice";
 
 const categories = [
-  "Politics",
-  "Technology",
-  "Science",
+  "Politics", 
+  "Technology", 
+  "Science", 
   "Entertainment",
-  "Sports",
   "Health",
+  "Sports",
+  "Business",
+  "Education",
+  "Travel",
+  "Environment",
+  "Fashion",
+  "Food",
+  "History",
+  "Art",
+  "Lifestyle",
+  "Finance",
+  "Automotive",
+  "Culture",
+  "Gaming"
 ];
 
 const CategoryFilter: React.FC = () => {

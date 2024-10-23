@@ -7,8 +7,28 @@ const PersonalizeFilter: React.FC = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
 
-  const categories = ["Politics", "Technology", "Science", "Entertainment"];
-  const sources = ["The Guardian", "BBC News", "CNN", "Reuters"];
+  const categories = [
+    "Politics", 
+    "Technology", 
+    "Science", 
+    "Entertainment",
+    "Health",
+    "Sports",
+    "Business",
+    "Education",
+    "Travel",
+    "Environment",
+    "Fashion",
+    "Food",
+    "History",
+    "Art",
+    "Lifestyle",
+    "Finance",
+    "Automotive",
+    "Culture",
+    "Gaming"
+  ]
+  const sources = ["The Guardian", "BBC News", "CNN", "Reuters" , "NYTimes","THENews","MediaStack"];
 
   const toggleCategory = (category: string) => {
     setSelectedCategories((prev) =>
@@ -36,6 +56,12 @@ const PersonalizeFilter: React.FC = () => {
           switch (source) {
             case "The Guardian":
               return "guardian";
+            case "THENews":
+              return "thenews";
+            case "NYTimes":
+              return "nytimes";
+            case "MediaStack":
+              return "mediastack";
             case "BBC News":
             case "CNN":
             case "Reuters":
